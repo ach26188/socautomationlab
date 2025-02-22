@@ -1,1 +1,1 @@
-# socautomationlab
+# SOC Automation Project
