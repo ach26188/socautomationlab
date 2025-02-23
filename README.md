@@ -62,13 +62,32 @@ You would need to do it for both VM instances in which in the screenshot "add th
 ![image](https://github.com/user-attachments/assets/d09bed8b-29f3-4a88-9f42-1af170e81e49)
 
 You should see this screenshot in which I have the Wazuh droplet already added so you would need to search for the "TheHive" droplet.
-![image](https://github.com/user-attachments/assets/d0a47aaa-7c08-430c-96d0-b5d86643d824)
+![image](https://github.com/user-attachments/assets/d0a47aaa-7c08-430c-96d0-b5d86643d824
 
-### Part 3: (Wazuh Configuration) 
+### Part 3: Windows installation
+Intro: The Windows 10 VM will be our sandbox in which we can release our Mimikatz exploit into our VM and able to receive logs/events. 
+Recommend watching the YouTube video for Windows 10 installation on Virtual box: https://www.youtube.com/watch?v=CMGa6DsGIpc&pp=ygUed2luZG93cyAxMCB2aXJ0dWFsYm94IHR1dG9yaWFs
+Step 0: Before starting this project I already had a Windows 10 VM installed on VMWare Workstation.
+![image](https://github.com/user-attachments/assets/20def673-0168-45cf-b964-d9f217d87dc2)
 
 
+### Part 4: (Wazuh Installation) 
+
+Step 1: Connect to the Wazuh droplet ubuntu virtual machine server. Within project, I used "Putty" to SSH into the virtual machine. - https://www.putty.org/
 
 
+Step 2: After able to SSH into Wazuh and login with root/password, run the following command to get latest update packages: apt-get update && apt upgrade
 
+Step 3: The latest package should be installed and now we can head over and install the latest version of Wazuh. (Install Here - https://documentation.wazuh.com/current/quickstart.html)
+![wazuh website](https://github.com/user-attachments/assets/cfa74349-251d-4435-abd5-f902965c6235)
+
+Step 4: Installation of Wazuh should be installed successfully according to the screenshot below.
+![wazuh install curl](https://github.com/user-attachments/assets/bb09b64b-add7-4620-9bb0-11a4b8e3703a)
+
+
+Step 5: You should be receiving credentials of "username" and "password" in which this will be how you sign into Wazuh.  
+![wazuh installation complete](https://github.com/user-attachments/assets/34869918-0e45-49e7-9262-da2818642418)
+
+Step 6: 
 
 
