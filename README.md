@@ -4,10 +4,11 @@
 - **Windows 10 Server**
 - **Ubuntu VM Server** (Digital Ocean Cloud Based)
 ### Security Tools Used:
-- **TheHive**
+- **TheHive (Case Management)**
 - **ElasticSearch**
 - **Cassandra**
-- **Wazuh**
+- **Wazuh(SIEM)**
+- **Shuffle (Automation)
 
 ### Part 1: Create a diagram of the project.
 - **This diagram will make it easier to understand how the project will be created using many different apps.**
@@ -48,9 +49,25 @@ After creating both droplets, go to one of the droplets and continue to "Network
 ![network firewall](https://github.com/user-attachments/assets/46f50f8b-490c-49a9-a987-b935cc784aca)
 
 Step 10:
-Within the Firewall make sure that it's the correct ports according to the screenshots Where the screenshot is blurred out make sure that that is your public IP.
-You can type "whats my IP" into google and thats how you find your public IP address.
+"Click on Create Firewall"
+![firewall](https://github.com/user-attachments/assets/8cf469f6-9f7a-4876-ac45-66f59ce76220)
+
+Step 11:
+After TheHive and Wazuh droplet have been created, you must create a firewall rule and add your public IP address. This will prevent brute force attacks on TheWazuh and TheHive droplets as we will access the internet.
+Insert your public IP address where I have it blurred, and configure the TCP and UDP rules shown within the image.
 ![Network Firewall Rules](https://github.com/user-attachments/assets/122ae8cf-804c-4558-84c4-f2a42d2b5b7b)
+
+Step 12: 
+You would need to do it for both VM instances in which in the screenshot "add the droplet" of the firewall that has been created to the other VM.
+![image](https://github.com/user-attachments/assets/d09bed8b-29f3-4a88-9f42-1af170e81e49)
+
+You should see this screenshot in which I have the Wazuh droplet already added so you would need to search for the "TheHive" droplet.
+![image](https://github.com/user-attachments/assets/d0a47aaa-7c08-430c-96d0-b5d86643d824)
+
+### Part 3: (Wazuh Configuration) 
+
+
+
 
 
 
