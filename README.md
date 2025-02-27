@@ -137,22 +137,36 @@ Create a backup file of the ossec.conf file. Make sure the ossec.conf file is ex
 Step 2: Add the folder to he firewall exclusions where mimikatz is extracted which is the Downloads folder for me.
 ![exclusions](https://github.com/user-attachments/assets/841c0e71-4f20-41bf-ba91-b33d20d44e4b)
 
-Part 6: (Wazuh Configuration)
-Step 1: Create a copy file of the ossec.conf file.
-![ossec backup command](https://github.com/user-attachments/assets/45b81529-a6bf-4aaf-af91-e15f8ded747e)
+<h2>Part 6: (Wazuh Configuration)</h2>
 
-Step 2: Configure the ossec.conf file within the Wazuh droplet: nano /var/ossec/etc/ossec.conf
-Make sure to save it CTRL+X and confirm save.
-![ossec conf](https://github.com/user-attachments/assets/6e19322c-8c43-43be-b7b8-65aaa9a46537)
+Step 1: Create a copy of the ossec.conf file
+<p>Run the following command:</p>
+<pre><code>cp /var/ossec/etc/ossec.conf /var/ossec/etc/ossec.conf.bak</code></pre>
+<img src="https://github.com/user-attachments/assets/45b81529-a6bf-4aaf-af91-e15f8ded747e" alt="OSSEC Backup Command" width="600">
 
-Step 3: Restart Wazuh service
-![wazuh restart](https://github.com/user-attachments/assets/a6d1ad91-c508-46cf-87d5-c7fb948115b9)
+Step 2: Configure the ossec.conf file within the Wazuh droplet</h2>
+<p>Edit the configuration file:</p>
+<pre><code>nano /var/ossec/etc/ossec.conf</code></pre>
+<p>Make sure to save it by pressing <strong>CTRL+X</strong>, then <strong>Y</strong>, and <strong>Enter</strong>.</p>
+<img src="https://github.com/user-attachments/assets/6e19322c-8c43-43be-b7b8-65aaa9a46537" alt="OSSEC Config" width="600">
+
+Step 3: Restart Wazuh Service
+<p>Restart the service with:</p>
+<pre><code>systemctl restart wazuh-manager</code></pre>
+<img src="https://github.com/user-attachments/assets/a6d1ad91-c508-46cf-87d5-c7fb948115b9" alt="Wazuh Restart" width="600">
 
 Step 4: Configure Filebeat
-![filebeat](https://github.com/user-attachments/assets/cf7a6841-8ffb-438f-a505-f5091dbfd1e3)
+<p>Modify the Filebeat configuration as needed.</p>
+<img src="https://github.com/user-attachments/assets/cf7a6841-8ffb-438f-a505-f5091dbfd1e3" alt="Filebeat Config" width="600">
 
 Step 5: Restart Filebeat
-![systemctl restart](https://github.com/user-attachments/assets/53b7134d-7f07-4599-a2e1-68c4fcd509e5)
+<p>Restart the Filebeat service:</p>
+<pre><code>systemctl restart filebeat</code></pre>
+<img src="https://github.com/user-attachments/assets/53b7134d-7f07-4599-a2e1-68c4fcd509e5" alt="Systemctl Restart" width="600">
+
+
+
+
 
 
 Step 7: Go to the index tab
