@@ -10,12 +10,12 @@
 - **Wazuh(SIEM)**
 - **Shuffle (Automation)
 
-### Part 1: Create a diagram of the project.
+<h2>Part 1: Create a diagram of the project.</h2>
 - **This diagram will make it easier to understand how the project will be created using many different apps.**
 
 ![SOC Automation Lab Diagram drawio](https://github.com/user-attachments/assets/a137c8a7-f5f0-4539-b4c3-f030a5474268)
 
-### Part 2: (Creating VM and Sign up with Digital Ocean)
+<h2>Part 2: (Creating VM and Sign up with Digital Ocean)</h2>
 
 Step 1: Sign up for Digital Ocean, and you should receive a free $200 trial.
 
@@ -64,14 +64,14 @@ You would need to do it for both VM instances in which in the screenshot "add th
 You should see this screenshot in which I have the Wazuh droplet already added so you would need to search for the "TheHive" droplet.
 ![image](https://github.com/user-attachments/assets/d0a47aaa-7c08-430c-96d0-b5d86643d824
 
-### Part 3: Windows installation
+<h2>Part 3: Windows installation</h2>
 Step 0: The Windows 10 VM will be our sandbox in which we can release our Mimikatz exploit into our VM and able to receive logs/events. 
 Recommend watching the YouTube video for Windows 10 installation on Virtual box: https://www.youtube.com/watch?v=CMGa6DsGIpc&pp=ygUed2luZG93cyAxMCB2aXJ0dWFsYm94IHR1dG9yaWFs
 
 - Before starting this project I already had a Windows 10 VM installed on VMWare Workstation.
 ![image](https://github.com/user-attachments/assets/20def673-0168-45cf-b964-d9f217d87dc2)
 
-### Part 3: Install Sysmon & Mimikatz
+<h2>Part 4: Install Sysmon & Mimikatz</h2>
 Step 1:  Install sysmon and extract it in the downloads folder.
 Sysmon: https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon
 Sysmon Config: https://github.com/olafhartong/sysmon-modular/blob/master/sysmonconfig.xml
@@ -90,7 +90,7 @@ Step 5: Make sure the file is extracted.
 ![Mimikatz](https://github.com/user-attachments/assets/652d3ba9-582c-4e31-8c05-2adba31e5ece)
 
 
-### Part 4: (Wazuh Installation) 
+<h2>Part 5: (Wazuh Installation) </h2> 
 
 Step 1: Connect to the Wazuh droplet ubuntu virtual machine server. Within project, I used "Putty" to SSH into the virtual machine. - https://www.putty.org/
 
@@ -164,11 +164,6 @@ Step 5: Restart Filebeat
 <pre><code>systemctl restart filebeat</code></pre>
 <img src="https://github.com/user-attachments/assets/53b7134d-7f07-4599-a2e1-68c4fcd509e5" alt="Systemctl Restart" width="600">
 
-
-
-
-
-
 Step 7: Go to the index tab
 ![image](https://github.com/user-attachments/assets/fcf3bc22-6520-41bc-a86d-83b4025a86d1)
 
@@ -181,3 +176,6 @@ Step 9: Configure index settings similar to screenshot and click create index.
 
 Step 10: You must activate the Wazuh agent, so scroll down to settings. 
 ![settings wazuh](https://github.com/user-attachments/assets/87792b38-cd00-4570-a3ff-ab9fac970a1d)
+
+<h2>Part 7: TheHive Installation</h2>
+
