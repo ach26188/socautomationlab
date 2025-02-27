@@ -65,9 +65,10 @@ You should see this screenshot in which I have the Wazuh droplet already added s
 ![image](https://github.com/user-attachments/assets/d0a47aaa-7c08-430c-96d0-b5d86643d824
 
 ### Part 3: Windows installation
-Intro: The Windows 10 VM will be our sandbox in which we can release our Mimikatz exploit into our VM and able to receive logs/events. 
+Step 0: The Windows 10 VM will be our sandbox in which we can release our Mimikatz exploit into our VM and able to receive logs/events. 
 Recommend watching the YouTube video for Windows 10 installation on Virtual box: https://www.youtube.com/watch?v=CMGa6DsGIpc&pp=ygUed2luZG93cyAxMCB2aXJ0dWFsYm94IHR1dG9yaWFs
-Step 0: Before starting this project I already had a Windows 10 VM installed on VMWare Workstation.
+
+- Before starting this project I already had a Windows 10 VM installed on VMWare Workstation.
 ![image](https://github.com/user-attachments/assets/20def673-0168-45cf-b964-d9f217d87dc2)
 
 
@@ -81,13 +82,18 @@ Step 2: After able to SSH into Wazuh and login with root/password, run the follo
 Step 3: The latest package should be installed and now we can head over and install the latest version of Wazuh. (Install Here - https://documentation.wazuh.com/current/quickstart.html)
 ![wazuh website](https://github.com/user-attachments/assets/cfa74349-251d-4435-abd5-f902965c6235)
 
-Step 4: Installation of Wazuh should be installed successfully according to the screenshot below.
+Step 4: Installation of Wazuh should be started similar to the screenshot below
 ![wazuh install curl](https://github.com/user-attachments/assets/bb09b64b-add7-4620-9bb0-11a4b8e3703a)
 
 
 Step 5: You should be receiving credentials of "username" and "password" in which this will be how you sign into Wazuh.  
-![wazuh installation complete](https://github.com/user-attachments/assets/34869918-0e45-49e7-9262-da2818642418)
+![wazuh installation complete](https://github.com/user-attachments/assets/48bcc98f-9966-4738-886b-03909596b643)
 
-Step 6: 
+
+Step 6: Head to your Wazuh dashboard by entering: https://wazuh_droplet_ip_address
+![image](https://github.com/user-attachments/assets/9b9b666a-d022-454e-a8c5-0b5e43e9461b)
+
+Step 7: 
+
 
 
