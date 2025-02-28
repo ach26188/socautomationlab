@@ -244,3 +244,12 @@ Step 2: After executing the Mimikatz we should see the event from the archives i
 Events of Mimikatz
 ![mimikatz wazuh](https://github.com/user-attachments/assets/ec7296ae-83b5-44d0-adee-fcf75c72f952)
 
+Step 3: Now we are going to create an alert for this malware.
+![local_rules_mimikatz](https://github.com/user-attachments/assets/c349d503-0b14-4d63-a28e-0f6bfdca1e1e)
+
+Step 4: After successfully creating the alerts within local_rules a alert should pop up within Threat managment tab.
+Screenshot: 
+
+<h2>Part 9: Automation Alerts</h2>
+
+
