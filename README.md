@@ -239,7 +239,8 @@ Execute within the powershell command
 <pre><code>./Mimikatz/</code></pre>
 
 Step 2: After executing the Mimikatz we should see the event from the archives index from Part 5 step 8 that we created.
+![mimkatz ](https://github.com/user-attachments/assets/0ce3b3d6-0acb-4f4f-bb2d-59963258a59e)
 
-Step 3: 
-
+Events of Mimikatz
+![mimikatz wazuh](https://github.com/user-attachments/assets/ec7296ae-83b5-44d0-adee-fcf75c72f952)
 
