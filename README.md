@@ -250,6 +250,13 @@ Step 3: Now we are going to create an alert for this malware.
 Step 4: After successfully creating the alerts within local_rules a alert should pop up within Threat managment tab.
 Screenshot: 
 
-<h2>Part 9: Automation Alerts</h2>
+<h2>Part 9: Configuration of Automation Alerts</h2>
 
+Step 1: Go to the website Shuffle.io
+
+Step 2: Create a webhook of Wazuh and ChangeMe
+Make sure change me "end actions" is repeat back to me and "call" is $exec
+![change me_2](https://github.com/user-attachments/assets/25a7810f-3dcf-4af1-9279-b81c49054561)
+
+Step 3: 
 
