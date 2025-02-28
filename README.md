@@ -178,4 +178,68 @@ Step 10: You must activate the Wazuh agent, so scroll down to settings.
 ![settings wazuh](https://github.com/user-attachments/assets/87792b38-cd00-4570-a3ff-ab9fac970a1d)
 
 <h2>Part 7: TheHive Installation</h2>
+Step 1 - Install the [Hive Installation]:(https://github.com/divyank50/SOC-Automation-Lab/blob/main/Hive_Installation)
+
+Step 2: You must install Java, Cassandra, elasticsearch and TheHive
+- Java
+![Screenshot_2025-02-16_at_3 07 18_PM](https://github.com/user-attachments/assets/5a9be7c3-e64f-42c9-9d58-6d4a84f9fe5e)
+- Cassendra
+![Screenshot_2025-02-16_at_3 07 29_PM](https://github.com/user-attachments/assets/fd47cd9a-5ee3-43bb-a34b-88b0428d1e30)
+- Elasticsearch
+![Screenshot_2025-02-16_at_3 07 44_PM](https://github.com/user-attachments/assets/c93a6b44-5239-4b4e-aded-92e2cb769d08)
+- TheHive
+![Screenshot_2025-02-16_at_3 08 00_PM](https://github.com/user-attachments/assets/6657587a-b995-49c5-a984-b0bae403aaa8)
+
+
+Step 3: Configure some changes within /etc/cassendra/cassendra.yaml
+<pre><code>nano /etc/cassendra/cassendra.yaml</pre></code>
+![listen_address](https://github.com/user-attachments/assets/b28d6236-337d-4041-87f9-dc54efa3cb8e)
+![rpc_address](https://github.com/user-attachments/assets/5f552a8e-5b8f-4b90-ad8b-41a779c090b3)
+![seeds](https://github.com/user-attachments/assets/3e5a2cc5-f96e-4a6a-a7a9-bd77ab35c01d)
+
+Step 4: Stop Cassendra and remove the old files
+<pre><code>systemctl stop cassendra.service</pre></code>
+<pre><code>rm -rf /var/lib/cassendra/</pre></code>
+![stop cassdandra](https://github.com/user-attachments/assets/f0606f98-b229-40de-b6ae-fe991c8f6c74)
+
+Step 5: Start up Cassendra
+<pre>systemctl start cassendra.service</pre>
+
+Step 6: Now we need to make changes within the elasticsearch.yml file
+<pre><code> nano /etc/elasticsearch/elasticsearch.yml </code></pre>
+![elasticsearch yml](https://github.com/user-attachments/assets/aa4bc03e-b7a5-42ff-ad8b-e3d262c9cb9d)
+- Provide public IP address of the droplet
+- Uncomment the "HTTP .port": 9200
+- Only use the running 1 node
+![elasticsearch yml #2](https://github.com/user-attachments/assets/20519645-a25e-4803-b71a-9c0cc9a8ef34)
+
+Step 7: Execute an Elasticsearch restart
+<pre><code> systemctl restart elasticsearch</pre></code> 
+
+Step 8: Configure the filebeat.yml file
+<pre><code> nano var/ossec/logs/archives </code></pre>
+![filebeat](https://github.com/user-attachments/assets/908a0f17-70cb-4dae-b4ff-e4f091ac54f7)
+And make sure to restart filebeat
+<pre><code>systemctl restart filebeat</code></pre>
+![systemctl restart](https://github.com/user-attachments/assets/ec395b9d-1143-4842-a940-89fc6630e10c)
+
+Step 9: Change the folder access of the hive from root to "thehive" user can access "chown -R thehive:thehive /opt/thp".
+![thehive chown](https://github.com/user-attachments/assets/860fc0a8-9f62-459c-bb22-53f60f7dea2b)
+
+Step 10: Now we need to configure the thehive application.conf file
+<pre><code>nano /etc/thehive/application.conf</code></pre>
+![applicationconf ](https://github.com/user-attachments/assets/eca5ce65-3fa3-4baa-8e37-626aad38121f)
+Make sure to add your public IP address like how it is below.
+![applicationconf #2](https://github.com/user-attachments/assets/90cba8bd-54f3-45c8-a31a-fe7330aa3d88)
+
+<h2>Part 8: SIEM Events & Alerts within Wazuh Configuration</h2>
+Step 1: Lets head to the Windows VM and head to Wazuh.
+Open PowerShell and head to the directory of where Mimikatz folder is located. The Mimikatz.exe file is inside x64 folder.
+Execute within the powershell command
+<pre><code>./Mimikatz/</code></pre>
+
+Step 2: After executing the Mimikatz we should see the event from the archives index from Part 5 step 8 that we created.
+
+Step 3: 
+
 
