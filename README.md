@@ -332,17 +332,19 @@ Step 12: Configure the Firewall that you created and create a new custom rule.
 ![9000](https://github.com/user-attachments/assets/6271622b-1783-475f-af5f-ac9a6cbbc49e)
 
 Step 13: Insert email trigger and put in a email address in which you will receive an alert of the Mimikatz malware when executed as well.
+![email configuration](https://github.com/user-attachments/assets/ba3327bc-e13b-4439-96bc-00d806d326a5)
+
 
 Step 14: Screenshot shows TheHive Alert & Successfully created of status code 200
 - By any chance you get an error of status code 400 which means you configured the Firewall wrong or did not insert the correct JSON code within the body in "TheHive".
 ![thehive alert notification](https://github.com/user-attachments/assets/459d7284-76bd-45ef-b5a2-dfdcea78efed)
 ![thehive alerts](https://github.com/user-attachments/assets/0cf593f6-22ef-4f47-891b-66a90e5b7005)
 
-
 Screenshot shows an email alert of the Mimikatz
 ![burner email](https://github.com/user-attachments/assets/a229027f-a93c-4a47-8a34-9ed7d44ac1ec)
 
-
+Conclusion: 
+Within the SOC Automation Project I learned how to use Wazuh SIEM tool, Sysmon events, TheHive Case Management tool, and Shuffle automation. Was able to detect events and set up alerts within Wazuh by configuring the droplet. I was also able to read sysmon windows event log of the Mimikatz malware that was able to execute onto a Windows 10 VM server. Within Shuffle I was able to successfully retrieve alerts with a lot of detailed information such as the Virus Total API, malicious IoC and hash information. I was also able to set up TheHive trigger alert and email trigger alert, which corresponds with the entire workflow automation. The email alert was sent to my email, in which I can see information such as the kind of malware that was detected. This project from the start was really hard to learn when it first came to configuring all the tools within the Linux terminal. This was challenging as there was a lot of troubleshooting with both the hive and wazuh droplet, which would fail occasionally. I learned a lot of hands on experience on log analysis, SIEM implementation, incident response, threat detection, and SOAR SOC workflow.
 
 
 
