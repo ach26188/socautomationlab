@@ -178,7 +178,7 @@ Step 10: You must activate the Wazuh agent, so scroll down to settings.
 ![settings wazuh](https://github.com/user-attachments/assets/87792b38-cd00-4570-a3ff-ab9fac970a1d)
 
 <h2>Part 7: TheHive Installation</h2>
-Step 1 - Install the [Hive Installation]:(https://github.com/divyank50/SOC-Automation-Lab/blob/main/Hive_Installation)
+Step 1 - Install the TheHive - 
 
 Step 2: You must install Java, Cassandra, elasticsearch and TheHive
 - Java
