@@ -327,5 +327,22 @@ Step 11: Configuration the authentication of TheHive according to the screenbelo
 Step 12: Configure the Firewall that you created and create a new custom rule. 
 - Protocol: TCP
 - Port Range: 9000
+- Sources: IPv4
 - Make sure when you are not using the workflow automation anymore deleted this rule and not leave it here as it means "TheHive" is ports are all open linking to your Public IP as well.
 ![9000](https://github.com/user-attachments/assets/6271622b-1783-475f-af5f-ac9a6cbbc49e)
+
+Step 13: Insert email trigger and put in a email address in which you will receive an alert of the Mimikatz malware when executed as well.
+
+Step 14: Screenshot shows TheHive Alert & Successfully created of status code 200
+- By any chance you get an error of status code 400 which means you configured the Firewall wrong or did not insert the correct JSON code within the body in "TheHive".
+![thehive alert notification](https://github.com/user-attachments/assets/459d7284-76bd-45ef-b5a2-dfdcea78efed)
+![thehive alerts](https://github.com/user-attachments/assets/0cf593f6-22ef-4f47-891b-66a90e5b7005)
+
+
+Screenshot shows an email alert of the Mimikatz
+![burner email](https://github.com/user-attachments/assets/a229027f-a93c-4a47-8a34-9ed7d44ac1ec)
+
+
+
+
+
