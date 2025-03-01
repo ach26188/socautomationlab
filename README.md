@@ -8,7 +8,7 @@
 - **ElasticSearch**
 - **Cassandra**
 - **Wazuh(SIEM)**
-- **Shuffle (Automation)
+- **Shuffle (Automation)**
 
 <h2>Part 1: Create a diagram of the project.</h2>
 - **This diagram will make it easier to understand how the project will be created using many different apps.**
@@ -178,7 +178,7 @@ Step 10: You must activate the Wazuh agent, so scroll down to settings.
 ![settings wazuh](https://github.com/user-attachments/assets/87792b38-cd00-4570-a3ff-ab9fac970a1d)
 
 <h2>Part 7: TheHive Installation</h2>
-Step 1 - Install the TheHive - 
+Step 1 - Install the TheHive - https://github.com/ach26188/socautomationlab/blob/main/TheHive%20Installation
 
 Step 2: You must install Java, Cassandra, elasticsearch and TheHive
 - Java
