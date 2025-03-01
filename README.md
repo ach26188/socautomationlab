@@ -254,9 +254,78 @@ Screenshot:
 
 Step 1: Go to the website Shuffle.io
 
-Step 2: Create a webhook of Wazuh and ChangeMe
-Make sure change me "end actions" is repeat back to me and "call" is $exec
-![change me_2](https://github.com/user-attachments/assets/25a7810f-3dcf-4af1-9279-b81c49054561)
+Step 2: Create a workflow call what it you want. You should see the application "change me". Now add "Wazuh" to the workflow.
 
-Step 3: 
+From the screenshot below copy the "webhook URL"
+![work flows soc automation project](https://github.com/user-attachments/assets/73c7e32b-ee68-4718-a86c-31bcdd369766)
 
+
+Step 3: Scroll down to settings. 
+![settings wazuh](https://github.com/user-attachments/assets/87792b38-cd00-4570-a3ff-ab9fac970a1d)
+
+- Click on edit configurations
+![edit configuration](https://github.com/user-attachments/assets/c03a5a92-59ed-40ae-bcf5-35b120dbef8b)
+
+- Add the webhook URL according to where it is similar to the screenshot below. Also change the "rule_id number to whatever you have it set within local_rules".
+- Lastly click save and it should prompt to restart the Wazuh Manager.
+![add configuration of shuffler io](https://github.com/user-attachments/assets/6a4cdb7a-932b-4019-9a98-04945d679aaa)
+
+Step 4: Click on "change me" and make sure it's similar to the screenshot below
+![change me_2](https://github.com/user-attachments/assets/e2b7535d-9367-4003-bd15-15863461fbec)
+
+Step 5: Execute Mimikatz with Powershell and you should be able to see the automated alert of Mimikatz. 
+
+Step 6: We are going to copy "hashes" and use AI to help find the regex parse of the hash SHA 256 within the screenshot. Your SHA256 hash should be the same if you are executing and download Mimikatz trunk.
+![hashes](https://github.com/user-attachments/assets/4a0d3543-2d34-4d5f-ac57-d12db88690d0)
+
+Step 5: Now within "change me" we are going to change "find actions" to Regex capture group. Also change the name to SHA256_Regex.
+<pre><code>SHA256=([A-Fa-f0-9]{64}) <</code></pre>
+![sha256 regex single line](https://github.com/user-attachments/assets/0e24fa21-f073-4b68-b1fe-c1c6324f90ef)
+
+Step 6: Run the workflow automation again and you should be able to get the results of the hash. 
+![sha256 hash](https://github.com/user-attachments/assets/8f980e63-b1d9-4c08-af68-4fe908cc9842)
+
+Step 7: Now we are going to add VirusTotal trigger. Create a virus total account and authenticate Virus Total v3.
+![virus total api key](https://github.com/user-attachments/assets/46542710-3288-4de7-b76d-ac2b27bef4cf)
+![add virus total setup api key](https://github.com/user-attachments/assets/7d3c3825-af9d-47cc-b7eb-09a303c0de30)
+
+Step 8: Run the workflow and now you should see results from the virus total and SHA 256 hash.
+![67 malicious](https://github.com/user-attachments/assets/b10e768b-14c1-4cae-9c1a-c8745b7f0352)
+
+Step 9: Now we are going to add "TheHive" trigger and make sure to click on advanced and add the body. Adding the simple method doesn't not work.
+<pre><code>{
+  "description": "Mimikatz detected on Computer: $exec.text.win.system.computer from User: $exec.text.win.eventdata.user",
+  "externallink": "${externallink}",
+  "flag": false,
+  "pap": 2,
+  "severity": "2",
+  "source": "Wazuh",
+  "sourceRef": "Rule: 100002",
+  "status": "New",
+  "summary": "Mimikatz detected on Computer: $exec.text.win.system.computer, ProcessID: $exec.text.win.system.processID and CommandLine: $exec.text.win.eventdata.commandLine",
+  "tags": [
+    "T1003"
+  ],
+  "title": "$exec.title",
+  "tlp": 2,
+  "type": "Internal"
+}</code></pre>
+
+Step 10: Now we need to authenticate "TheHive"
+- Sign into "TheHive" as admin and create an organization.
+![mysoclab password set](https://github.com/user-attachments/assets/7ccce97c-9c72-4bbd-aa2e-ad63d48c8e95)
+- Within the organization, create a "user"
+- Copy the API, select analyst and click save  
+![soar](https://github.com/user-attachments/assets/fdf58f55-d593-44db-a19d-0f5c3d5c3ea2)
+
+Step 11: Configuration the authentication of TheHive according to the screenbelow.
+- Create a simple label so its easy to remember
+- Paste API Key
+- Insert TheHive public IP address
+![thehive soar](https://github.com/user-attachments/assets/6d5107f5-8b45-4473-b9ea-574f6f4f4e6b)
+
+Step 12: Configure the Firewall that you created and create a new custom rule. 
+- Protocol: TCP
+- Port Range: 9000
+- Make sure when you are not using the workflow automation anymore deleted this rule and not leave it here as it means "TheHive" is ports are all open linking to your Public IP as well.
+![9000](https://github.com/user-attachments/assets/6271622b-1783-475f-af5f-ac9a6cbbc49e)
