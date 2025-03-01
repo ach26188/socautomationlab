@@ -238,7 +238,7 @@ Open PowerShell and head to the directory of where Mimikatz folder is located. T
 Execute within the powershell command
 <pre><code>./Mimikatz/</code></pre>
 
-Step 2: After executing the Mimikatz we should see the event from the archives index from Part 5 step 8 that we created.
+Step 2: After executing the Mimikatz, we should see the event from the archives index from Part 5 step 8 that we created.
 ![mimkatz ](https://github.com/user-attachments/assets/0ce3b3d6-0acb-4f4f-bb2d-59963258a59e)
 
 Events of Mimikatz
@@ -247,8 +247,9 @@ Events of Mimikatz
 Step 3: Now we are going to create an alert for this malware.
 ![local_rules_mimikatz](https://github.com/user-attachments/assets/c349d503-0b14-4d63-a28e-0f6bfdca1e1e)
 
-Step 4: After successfully creating the alerts within local_rules a alert should pop up within Threat managment tab.
-Screenshot: 
+Step 4: After successfully creating the alerts within local_rules, execute the mimikatz.exe again and an alert should pop up within the Threat Management section.
+![mimkatz detection](https://github.com/user-attachments/assets/821b85ea-4377-46f2-a447-1ebbbc43ea49)
+
 
 <h2>Part 9: Configuration of Automation Alerts</h2>
 
